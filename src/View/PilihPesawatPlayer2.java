@@ -37,20 +37,17 @@ public class PilihPesawatPlayer2 extends javax.swing.JFrame {
         System.out.println(defaultNama);
         System.out.println(defaultPesawat);
 
-        // default username
         if (defaultNama != null) {
             jTextField1.setText(defaultNama);
             this.username = defaultNama;
         }
 
-        // default combobox
         if (defaultPesawat != null) {
 
             jComboBox1.setSelectedItem(defaultPesawat);
 
             this.namaPesawat = defaultPesawat;
 
-            // update gambar otomatis
             if (defaultPesawat.equals("Pesawat Alien")) {
 
                 setImage(
@@ -75,7 +72,6 @@ public class PilihPesawatPlayer2 extends javax.swing.JFrame {
 
         } else {
 
-            // kalau DB kosong
             this.namaPesawat =
                 (String) jComboBox1.getSelectedItem();
         }

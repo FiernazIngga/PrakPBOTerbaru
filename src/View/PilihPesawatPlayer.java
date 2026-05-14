@@ -27,20 +27,17 @@ public class PilihPesawatPlayer extends javax.swing.JFrame {
 
         String defaultPesawat = dao.data("namaPesawat1");
 
-        // default username
         if (defaultNama != null) {
             jTextField1.setText(defaultNama);
             this.username = defaultNama;
         }
 
-        // default combobox
         if (defaultPesawat != null) {
 
             jComboBox1.setSelectedItem(defaultPesawat);
 
             this.namaPesawat = defaultPesawat;
 
-            // update gambar otomatis
             if (defaultPesawat.equals("Pesawat Amerika")) {
 
                 setImage(
@@ -64,8 +61,6 @@ public class PilihPesawatPlayer extends javax.swing.JFrame {
             }
 
         } else {
-
-            // kalau DB kosong
             this.namaPesawat =
                 (String) jComboBox1.getSelectedItem();
         }
