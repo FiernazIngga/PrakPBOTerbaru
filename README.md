@@ -27,7 +27,7 @@ Mode game:
 
 ### Fitur Utama
 
-### ⚔ Combat System
+#### Combat System
 - Bullet system dengan cooldown
 - Collision detection
 - HP system untuk player & enemy
