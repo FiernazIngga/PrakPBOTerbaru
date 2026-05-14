@@ -81,22 +81,6 @@ Game menggunakan asset:
 
 ---
 
-## 🗃 Database Structure (History Game)
-Tabel: `history_game`
-
-Field:
-- id
-- namaPilot1
-- namaPilot2
-- namaPesawat1
-- namaPesawat2
-- waktu_mulai
-- waktu_selesai
-- waktu_sekarang
-- catatan
-
----
-
 ## ▶ Cara Menjalankan
 
 1. Clone repo
@@ -104,5 +88,12 @@ Field:
 git clone https://github.com/FiernazIngga/PrakPBOTerbaru.git
 ```
 2. Buka di Netbeans atau yang lain
-3. Pastikan MYSQL sudah dibuat
-4. Jalankan program dari `GameProject -> src -> gameproject -> GameProject.java`
+3. Klik File → Open Project pilih `PrakPBOTerbaru`
+4. Setup JDBC MySql Connector
+   - Klik kanan project → Properties
+   - Masuk ke Libraries
+   - Klik Add JAR/Folder
+   - Masukkan file: `mysql-connector-j-8.x.x.jar`
+5. Pastikan MySQL sudah berjalan (XAMPP)
+6. Import `history_game.sql` 
+7. Jalankan program dari `GameProject -> src -> gameproject -> GameProject.java`
