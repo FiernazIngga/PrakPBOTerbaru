@@ -16,6 +16,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import java.time.LocalDateTime;
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class PanelArenaGame extends javax.swing.JPanel {
 
@@ -32,63 +33,71 @@ public class PanelArenaGame extends javax.swing.JPanel {
     private boolean sudahInsert = false;
     
     public PanelArenaGame(GameState model,GamePesawat controller,JFrame frame,boolean isbot,TempDataHistory tempDataMasuk) {
+        System.out.println("Panel dibuat");
+        this.tempDataMasuk = tempDataMasuk;
+        this.isbot = isbot;
+        this.model = model;
+        this.controller = controller;
+        this.parentFrame = frame;
 
-    this.tempDataMasuk = tempDataMasuk;
-    this.isbot = isbot;
-    this.model = model;
-    this.controller = controller;
-    this.parentFrame = frame;
+        if (isbot) {
 
-    if (isbot) {
+            String[] pesawatBot = {
+                "Pesawat Alien",
+                "Pesawat Darker",
+                "Pesawat Phantom"
+            };
 
-        String[] pesawatBot = {
-            "Pesawat Alien",
-            "Pesawat Darker",
-            "Pesawat Phantom"
+            Random random = new Random();
+
+            String pesawatRandom = pesawatBot[
+                random.nextInt(pesawatBot.length)
+            ];
+            String namaPilot = tempDataMasuk.getNamaPilot1() == null ? "Pengguna" : tempDataMasuk.getNamaPilot1();
+            tempDataMasuk.setNamaPilot1(namaPilot);
+            tempDataMasuk.setNamaPilot2("BOT Sistem");
+            tempDataMasuk.setNamaPesawat1("Pesawat Indonesia");
+            tempDataMasuk.setNamaPesawat2(pesawatRandom);
+        }
+
+        LocalDateTime sekarang = LocalDateTime.now();
+
+        tempDataMasuk.setWaktu_mulai(sekarang);
+        tempDataMasuk.setWaktu_sekarang(sekarang);
+
+        initComponents();
+
+        setFocusable(true);
+        addKeyListener(controller);
+
+        String[] backgrounds = {
+            "/Asset/Resource/BackgroundImage/background1.png",
+            "/Asset/Resource/BackgroundImage/background2.png",
+            "/Asset/Resource/BackgroundImage/background3.png"
         };
 
-        Random random = new Random();
-
-        String pesawatRandom = pesawatBot[
-            random.nextInt(pesawatBot.length)
+        String bgRandom = backgrounds[
+            ThreadLocalRandom.current().nextInt(backgrounds.length)
         ];
-        String namaPilot = tempDataMasuk.getNamaPilot1() == null ? "Pengguna" : tempDataMasuk.getNamaPilot1();
-        tempDataMasuk.setNamaPilot1(namaPilot);
-        tempDataMasuk.setNamaPilot2("BOT Sistem");
-        tempDataMasuk.setNamaPesawat1("Pesawat Indonesia");
-        tempDataMasuk.setNamaPesawat2(pesawatRandom);
+
+        background = new ImageIcon(
+            getClass().getResource(bgRandom)
+        ).getImage();
+
+        pesawat1 = new ImageIcon(
+            getClass().getResource(
+                pathPesawat(tempDataMasuk.getNamaPesawat1())
+            )
+        ).getImage();
+
+        pesawat2 = new ImageIcon(
+            getClass().getResource(
+                pathPesawat(tempDataMasuk.getNamaPesawat2())
+            )
+        ).getImage();
+
+        startLoop();
     }
-
-    LocalDateTime sekarang = LocalDateTime.now();
-
-    tempDataMasuk.setWaktu_mulai(sekarang);
-    tempDataMasuk.setWaktu_sekarang(sekarang);
-
-    initComponents();
-
-    setFocusable(true);
-    addKeyListener(controller);
-
-    background = new ImageIcon(
-        getClass().getResource(
-            "/Asset/Resource/BackgroundImage/background1.png"
-        )
-    ).getImage();
-
-    pesawat1 = new ImageIcon(
-        getClass().getResource(
-            pathPesawat(tempDataMasuk.getNamaPesawat1())
-        )
-    ).getImage();
-
-    pesawat2 = new ImageIcon(
-        getClass().getResource(
-            pathPesawat(tempDataMasuk.getNamaPesawat2())
-        )
-    ).getImage();
-
-    startLoop();
-}
     
     private void startLoop() {
         new Thread(() -> {

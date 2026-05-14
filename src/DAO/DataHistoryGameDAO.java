@@ -66,7 +66,11 @@ public class DataHistoryGameDAO implements InterfaceHistoryGame {
             while (rs.next()) {
 
                 DataHistoryGame h = new DataHistoryGame();
-
+                
+                h.setId(
+                    Integer.parseInt(rs.getString("id"))
+                );
+                
                 h.setNamaPilot1(
                     rs.getString("namaPilot1")
                 );
@@ -163,7 +167,8 @@ public class DataHistoryGameDAO implements InterfaceHistoryGame {
 
             ps.setInt(1, id);
 
-            ps.executeUpdate();
+            int row = ps.executeUpdate();
+            System.out.println("Row affected: " + row);
 
             System.out.println("Delete berhasil");
 

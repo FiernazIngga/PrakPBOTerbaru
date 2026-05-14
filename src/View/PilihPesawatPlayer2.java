@@ -93,6 +93,7 @@ public class PilihPesawatPlayer2 extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -138,6 +139,15 @@ public class PilihPesawatPlayer2 extends javax.swing.JFrame {
         jPanel1.add(jLabel4);
         jLabel4.setBounds(650, 110, 340, 20);
 
+        jButton1.setBackground(new java.awt.Color(0, 153, 102));
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Kembali");
+        jButton1.setFocusable(false);
+        jButton1.addActionListener(this::jButton1ActionPerformed);
+        jPanel1.add(jButton1);
+        jButton1.setBounds(20, 20, 110, 23);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -155,6 +165,13 @@ public class PilihPesawatPlayer2 extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         exceptionHandlingUsername();
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        PilihPesawatPlayer pesawatPlayer1 = new PilihPesawatPlayer(tempDataMasuk);
+        pesawatPlayer1.setVisible(true);
+        pesawatPlayer1.setLocationRelativeTo(null);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(() -> new GameProjectPlay().setVisible(true));
@@ -217,6 +234,7 @@ public class PilihPesawatPlayer2 extends javax.swing.JFrame {
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton4;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;

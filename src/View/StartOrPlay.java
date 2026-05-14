@@ -4,12 +4,14 @@
  */
 package View;
 
+import DAO.DataHistoryGameDAO;
 import Model.ModelHistoryGame.TempDataHistory;
 import java.awt.Color;
 import java.awt.Image;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -65,6 +67,7 @@ public class StartOrPlay extends javax.swing.JFrame {
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("HISTORI PERMAINAN");
         jButton2.setFocusable(false);
+        jButton2.addActionListener(this::jButton2ActionPerformed);
         jPanel1.add(jButton2);
         jButton2.setBounds(380, 300, 430, 60);
 
@@ -104,6 +107,25 @@ public class StartOrPlay extends javax.swing.JFrame {
         main.setLocationRelativeTo(null);
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        DataHistoryGameDAO dao = new DataHistoryGameDAO();
+
+        if (dao.getAll().isEmpty()) {
+            JOptionPane.showMessageDialog(
+                null,
+                "Data history kosong, tidak bisa dibuka!",
+                "Info",
+                JOptionPane.WARNING_MESSAGE
+            );
+            return;
+        }
+
+        LihatHistory lh = new LihatHistory();
+        lh.setVisible(true);
+        lh.setLocationRelativeTo(null);
+        lh.loadData();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(() -> new GameProjectPlay().setVisible(true));

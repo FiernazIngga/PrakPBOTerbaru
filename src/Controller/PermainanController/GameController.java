@@ -30,7 +30,7 @@ public class GameController {
                 new SoundPlayer("/Asset/Resource/Sound/MentahanSound.wav");
 
             int bulletX = model.enemy.x - 10;
-            int bulletY = model.enemy.y + model.enemy.height / 2;
+            int bulletY = model.enemy.y + model.enemy.height - 95;
 
             soundPlay.play();
             model.bullets.add(new Bullet(bulletX, bulletY, -17, false));
@@ -78,7 +78,7 @@ public class GameController {
                 model.player.hp -= 10;
 
                 model.ledakans.add(
-                    new Ledakan(b.x, b.y - 50, model.gambarLedakan)
+                    new Ledakan(b.x, b.y - 35, model.gambarLedakan)
                 );
 
                 kena = true;

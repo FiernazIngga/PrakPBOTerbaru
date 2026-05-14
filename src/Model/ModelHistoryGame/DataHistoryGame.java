@@ -22,6 +22,10 @@ public class DataHistoryGame {
         return id;
     }
     
+    public void setId(int id) {
+        this.id = id;
+    }
+    
     public String getNamaPilot1() {
         return namaPilot1;
     }
