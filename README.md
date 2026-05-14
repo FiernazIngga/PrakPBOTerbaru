@@ -1,6 +1,6 @@
-# 🚀 PrakPBOTerbaru - Game Pesawat Battle (Java Swing MVC)
+## 🚀 PrakPBOTerbaru - Game Pesawat Battle (Java Swing MVC)
 
-## 📌 Deskripsi
+### Deskripsi
 Project ini adalah game 2D berbasis **Java Swing** dengan konsep pertarungan pesawat (airplane battle) yang dibuat untuk tugas Praktikum Pemrograman Berorientasi Objek (PBO).
 
 Game ini mendukung:
@@ -12,7 +12,7 @@ Game ini mendukung:
 
 ---
 
-## 🎮 Gameplay
+### Gameplay
 Dalam game ini, pemain mengendalikan pesawat untuk:
 - Bergerak naik dan turun
 - Menembak lawan
@@ -25,7 +25,7 @@ Mode game:
 
 ---
 
-## 🧠 Fitur Utama
+### Fitur Utama
 
 ### ⚔ Combat System
 - Bullet system dengan cooldown
@@ -33,12 +33,12 @@ Mode game:
 - HP system untuk player & enemy
 - Game over condition
 
-### 🤖 AI Bot
+#### AI Bot
 - Enemy bisa digantikan bot
 - Bot memilih pesawat secara random
 - Bot melakukan aksi otomatis
 
-### 💾 History Game (Database)
+#### History Game (Database)
 Game menyimpan data pertandingan:
 - Nama pilot
 - Nama pesawat
@@ -51,7 +51,7 @@ Disimpan melalui:
 
 ---
 
-## 🏗 Arsitektur Project (MVC)
+### Arsitektur Project (MVC)
 Project menggunakan struktur:
 
 - **Model**
@@ -72,7 +72,7 @@ Project menggunakan struktur:
 
 ---
 
-## 🎨 Asset Game
+### Asset Game
 Game menggunakan asset:
 - Background random (3 variasi)
 - Pesawat player & enemy
@@ -81,7 +81,7 @@ Game menggunakan asset:
 
 ---
 
-## ▶ Cara Menjalankan
+### Cara Menjalankan
 
 1. Clone repo
 ```bash
