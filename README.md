@@ -21,7 +21,7 @@ Dalam game ini, pemain mengendalikan pesawat untuk:
 
 Mode game:
 - 🧑‍🤝‍🧑 2 Player Mode
-- 🤖 Bot Mode (AI otomatis)
+- 🤖 Bot Mode (otomatis)
 
 ---
 
