@@ -96,4 +96,4 @@ git clone https://github.com/FiernazIngga/PrakPBOTerbaru.git
    - Masukkan file: `mysql-connector-j-8.x.x.jar`
 5. Pastikan MySQL sudah berjalan (XAMPP)
 6. Import `history_game.sql` 
-7. Jalankan program dari `GameProject -> src -> gameproject -> GameProject.java`
+7. Jalankan program dari `GameProject → src → gameproject → GameProject.java`
