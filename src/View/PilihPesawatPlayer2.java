@@ -121,7 +121,7 @@ public class PilihPesawatPlayer2 extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("PILIH PESAWAT USER PERTAMA");
+        jLabel3.setText("PILIH PESAWAT USER KEDUA");
         jPanel1.add(jLabel3);
         jLabel3.setBounds(0, 40, 1080, 32);
 
@@ -142,7 +142,7 @@ public class PilihPesawatPlayer2 extends javax.swing.JFrame {
         jButton1.setFocusable(false);
         jButton1.addActionListener(this::jButton1ActionPerformed);
         jPanel1.add(jButton1);
-        jButton1.setBounds(20, 20, 110, 23);
+        jButton1.setBounds(20, 20, 110, 27);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
